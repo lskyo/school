@@ -1,15 +1,18 @@
 创建版本库
 1.初始化一个Git仓库，使用git init命令。
 2.添加文件到Git仓库，分两步：
-   第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；
-   第二步，使用命令git commit -m "说明"，完成。
-
+第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+第二步，使用命令git commit -m "说明"，完成。
 注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+
+
 
 
 时光机穿梭
 1、要随时掌握工作区的状态，使用git status命令。
 2、如果git status告诉你有文件被修改过，用git diff可以查看修改内容。
+
+
 
 
 版本回退
@@ -18,10 +21,14 @@
 3、要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
 
 
+
+
 撤销修改
 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
+
+
 
 
 删除文件
@@ -29,9 +36,13 @@
 命令git checkout -- filename 可以把误删的文件恢复到最新版本。
 
 
+
+
 创建SSH密钥
 $ ssh_keygen -t rsa -C "youremail@example.com"
-成功后在/home/user/.ssh/下找到  id_rsa.pub (公钥) 和  id_rsa (私钥)  
+成功后在/home/user/.ssh/下找到  id_rsa.pub (公钥) 和  id_rsa (私钥) 
+
+
 
 
 添加远程库
@@ -40,9 +51,13 @@ $ ssh_keygen -t rsa -C "youremail@example.com"
 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
 
 
+
+
 从远程库克隆
 要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。
 Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
+
+
 
 
 创建和合并分支
@@ -56,6 +71,8 @@ Git支持多种协议，包括https，但通过ssh支持的原生git协议速度
 用git log --graph命令可以看到分支合并图。
 
 
+
+
 分支管理策略
 在实际开发中，我们应该按照几个基本原则进行分支管理：
 首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
@@ -66,11 +83,15 @@ Git支持多种协议，包括https，但通过ssh支持的原生git协议速度
 $git merge --no-ff -m "merge with no-ff" dev
 
 
+
+
 Bug分支
 当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug。
 修复后，一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；
 另一种方式是用git stash pop，恢复的同时把stash内容也删了：，回到工作现场。
 多次stash可以用git stash list 查看内容。
+
+
 
 
 多人协作
@@ -86,6 +107,8 @@ Bug分支
 在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
 
 
+
+
 创建标签
 命令git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
 git tag -a <tagname> -m "blablabla..."可以指定标签信息；
@@ -94,11 +117,15 @@ git tag -s <tagname> -m "blablabla..."可以用PGP签名标签；
 命令git tag可以查看所有标签。
 
 
+
+
 操作标签
 命令git push origin <tagname>可以推送一个本地标签；
 命令git push origin --tags可以推送全部未推送过的本地标签；
 命令git tag -d <tagname>可以删除一个本地标签；
 命令git push origin :refs/tags/<tagname>可以删除一个远程标签。
+
+
 
 
 自定义Git
@@ -109,6 +136,7 @@ $git config --global alias.unstage ‘reset HEAD' 把reset HEAD用unstage代替
 让Git显示颜色，会让命令输出看起来更醒目：$ git config --global color.ui true
 在Git工作区的根目录下创建一个特殊的.gitignore文件，然后把要忽略的文件名填进去，Git就会自动忽略这些文件。
 https://github.com/github/gitignore 里已经为我们准备了各种配置文件。
+
 
 
 
