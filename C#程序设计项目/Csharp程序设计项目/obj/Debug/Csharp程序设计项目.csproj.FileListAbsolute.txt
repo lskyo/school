@@ -1,0 +1,16 @@
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.find.resources
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.help.resources
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.Login.resources
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.Main.resources
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.manfile.resources
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.Properties.Resources.resources
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.csproj.GenerateResource.Cache
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\bin\Debug\Csharp程序设计项目.exe.config
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\bin\Debug\Csharp程序设计项目.exe
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\bin\Debug\Csharp程序设计项目.pdb
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.exe
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.pdb
+C:\Users\60991\Desktop\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.csprojResolveAssemblyReference.cache
+E:\Csharp程序设计项目\Csharp程序设计项目\bin\Debug\Csharp程序设计项目.exe.config
+E:\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.exe
+E:\Csharp程序设计项目\Csharp程序设计项目\obj\Debug\Csharp程序设计项目.pdb
