@@ -489,55 +489,183 @@ height	    返回屏幕的总高度
 pixelDepth	返回屏幕的颜色分辨率（每象素的位数）
 width	    返回屏幕的总宽度
 ----------------------------------------------------------------------------------------------------------
+getElementsByName()方法：
+document.getElementsByName(name);   //返回带有指定名称的节点对象的集合。
+【注意】
+1. 因为文档中的 name 属性可能不唯一，所有 getElementsByName() 方法返回的是元素的数组，而不是一个元素。
+2. 和数组类似也有length属性，可以和访问数组一样的方法来访问，从0开始。
+----------------------------------------------------------------------------------------------------------
+getElementsByTagName()方法：
+document.getElementsByTagName(Tagname);  //返回带有指定标签名的节点对象的集合。返回元素的顺序是它们在文档中的顺序。
+【注意】
+1. Tagname是标签的名称，如p、a、img等标签名。
+2. 和数组类似也有length属性，可以和访问数组一样的方法来访问，所以从0开始。
+----------------------------------------------------------------------------------------------------------
+getAttribute()方法：
+elementNode.getAttribute(name);  //通过元素节点的属性名称获取属性的值。
+【说明】
+1. elementNode：使用getElementById()、getElementsByTagName()等方法，获取到的元素节点。
+2. name：要想查询的元素节点的属性名字
+----------------------------------------------------------------------------------------------------------
+setAttribute()方法：
+elementNode.setAttribute(name,value);
+【说明】
+1.name: 要设置的属性名。
+2.value: 要设置的属性值。
+【注意】
+1.把指定的属性设置为指定的值。如果不存在具有指定名称的属性，该方法将创建一个新属性。
+2.类似于getAttribute()方法，setAttribute()方法只能通过元素节点对象调用的函数。
+----------------------------------------------------------------------------------------------------------
+节点属性
+在文档对象模型 (DOM) 中，每个节点都是一个对象。DOM 节点有三个重要的属性 ：
+1. nodeName : 节点的名称
+2. nodeValue ：节点的值
+3. nodeType ：节点的类型
 
+一、nodeName 属性: 节点的名称，是只读的。
+1. 元素节点的 nodeName 与标签名相同
+2. 属性节点的 nodeName 是属性的名称
+3. 文本节点的 nodeName 永远是 #text
+4. 文档节点的 nodeName 永远是 #document
+
+二、nodeValue 属性：节点的值
+1. 元素节点的 nodeValue 是 undefined 或 null
+2. 文本节点的 nodeValue 是文本自身
+3. 属性节点的 nodeValue 是属性的值
+
+三、nodeType 属性: 节点的类型，是只读的。
+以下常用的几种结点类型:
+元素类型    节点类型
+  元素          1
+  属性          2
+  文本          3
+  注释          8
+  文档          9
+----------------------------------------------------------------------------------------------------------
+访问子结点：
+elementNode.childNodes; //访问选定元素节点下的所有子节点的列表，返回的值可以看作是一个数组，他具有length属性。
+【注意】如果选定的节点没有子节点，则该属性返回不包含节点的 NodeList。不同浏览器可能返回的节点数不一样。
+第一个子节点：
+node.firstChild;   //与elementNode.childNodes[0]是同样的效果。 
+//属性返回‘childNodes’数组的第一个子节点。如果选定的节点没有子节点，则该属性返回 NULL。
+最后一个子节点：
+node.lastChild;  //与elementNode.childNodes[elementNode.childNodes.length-1]是同样的效果。 
+//属性返回‘childNodes’数组的最后一个子节点。如果选定的节点没有子节点，则该属性返回 NULL。
+----------------------------------------------------------------------------------------------------------
+访问父节点：
+elementNode.parentNode;  //获取指定节点的父节点
+【注意】父节点只能有一个。
+----------------------------------------------------------------------------------------------------------
+访问兄弟节点：
+nodeObject.nextSibling;  //属性可返回某个节点之后紧跟的节点（处于同一树层级中）。
+nodeObject.previousSibling;    //属性可返回某个节点之前紧跟的节点（处于同一树层级中）。
+----------------------------------------------------------------------------------------------------------
+插入节点：
+appendChild(newnode);  //newnode：指定追加的节点。
+//在指定节点的最后一个子节点列表之后添加一个新的子节点。
+例子：
+  var otest = document.getElementById("test");  
+  var newnode = document.createElement("li");
+  newnode.innerHTML = "PHP";
+  otest.appendChild(newnode);
+----------------------------------------------------------------------------------------------------------
+插入节点：
+insertBefore(newnode,node);   //newnode: 要插入的新节点。node: 指定此节点前插入节点。
+例子：
+  var otest = document.getElementById("test");  
+  var node = otest.lastChild;
+  var newnode = document.createElement("li");
+  newnode.innerHTML = "PHP";
+  otest.insertBefore(newnode,node);
+----------------------------------------------------------------------------------------------------------
+删除节点：
+nodeObject.removeChild(node);  //node ：指定需要删除的节点。
+【说明】removeChild() 方法从子节点列表中删除某个节点。
+如删除成功，此方法可返回被删除的节点，如失败，则返回 NULL。
+----------------------------------------------------------------------------------------------------------
+替换元素节点：
+node.replaceChild (newnode,oldnew );   //newnode : 用于替换 oldnew 的对象。 oldnew : 被 newnode 替换的对象。
+//replaceChild 实现子节点(对象)的替换。返回被替换对象的引用。
+例子：
+	var oldnode=document.getElementById("oldnode");
+	var newnode=document.createElement("i");
+	newnode.innerHTML=oldnode.innerHTML
+	oldnode.parentNode.replaceChild(newnode,oldnode); 
+----------------------------------------------------------------------------------------------------------
+创建元素节点：
+document.createElement(tagName);  //tagName：字符串值，这个字符串用来指明创建元素的类型。
+【注意】要与appendChild() 或 insertBefore()方法联合使用，将元素显示在页面中。
+例子：
+function createa(url,text)
+{
+	var mylink = document.createElement("a");
+	mylink.setAttribute("href",url);
+	mylink.innerHTML=text;
+	return mylink;
+}
+----------------------------------------------------------------------------------------------------------
+创建文本节点：
+document.createTextNode(data);  //data : 字符串值，可规定此节点的文本。
+//createTextNode() 方法创建新的文本节点，返回新创建的 Text 节点。
+例子：
+ var myp = document.createElement("p");
+ myp.className="message";
+ var test = document.createTextNode("I love JavaScript!");
+ myp.appendChild(test);
+ document.body.appendChild(myp);
+----------------------------------------------------------------------------------------------------------
+浏览器窗口可视区域大小：
+获得浏览器窗口的尺寸（浏览器的视口，不包括工具栏和滚动条）的方法:
+一、对于IE9+、Chrome、Firefox、Opera 以及 Safari：
+?  window.innerHeight  //浏览器窗口的内部高度
+?  window.innerWidth   //浏览器窗口的内部宽度
+
+二、对于 Internet Explorer 8、7、6、5：
+?  document.documentElement.clientHeight表示HTML文档所在窗口的当前高度。
+?  document.documentElement.clientWidth表示HTML文档所在窗口的当前宽度。
+或者
+Document对象的body属性对应HTML文档的<body>标签
+?  document.body.clientHeight
+?  document.body.clientWidth
+
+在不同浏览器都实用的 JavaScript 方案：
+var w= document.documentElement.clientWidth
+      || document.body.clientWidth;
+var h= document.documentElement.clientHeight
+      || document.body.clientHeight;
+----------------------------------------------------------------------------------------------------------
+网页尺寸
+一、scrollHeight和scrollWidth，获取网页内容高度和宽度。
+1、针对IE、Opera:
+scrollHeight 是网页内容实际高度，可以小于 clientHeight。
+2、针对NS、FF:
+scrollHeight 是网页内容高度，不过最小值是 clientHeight。也就是说网页内容实际高度小于 clientHeight 时，scrollHeight 返回 clientHeight 。
+3、浏览器兼容性
+var w=document.documentElement.scrollWidth
+   || document.body.scrollWidth;
+var h=document.documentElement.scrollHeight
+   || document.body.scrollHeight;
+
+二、offsetHeight和offsetWidth，获取网页内容高度和宽度(包括滚动条等边线，会随窗口的显示大小改变)。
+1、值
+offsetHeight = clientHeight + 滚动条 + 边框。
+2、浏览器兼容性
+var w= document.documentElement.offsetWidth
+    || document.body.offsetWidth;
+var h= document.documentElement.offsetHeight
+    || document.body.offsetHeight;
+----------------------------------------------------------------------------------------------------------
+网页卷去的距离与偏移量
+scrollLeft:设置或获取位于给定对象左边界与窗口中目前可见内容的最左端之间的距离。
+scrollTop:设置或获取位于对象最顶端与窗口中可见内容的最顶端之间的距离 。
+offsetLeft:获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 。
+offsetTop:获取指定对象相对于版面或由 offsetParent 属性指定的父坐标的计算顶端位置 。
+【注意】
+1. 区分大小写
+2. offsetParent：布局中设置postion属性(Relative、Absolute、fixed)的父容器，
+从最近的父节点开始，一层层向上找，直到HTML的body。
 ----------------------------------------------------------------------------------------------------------
 
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------
-
-参考网址：http://www.runoob.com/jsref/jsref-tutorial.html
+参考网址：
+http://www.runoob.com/jsref/jsref-tutorial.html
+http://www.w3school.com.cn/
