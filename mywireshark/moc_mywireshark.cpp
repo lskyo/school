@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mywireshark.h'
 **
-** Created: Fri Dec 16 17:57:29 2016
+** Created: Fri Dec 16 19:07:32 2016
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,18 +23,21 @@ static const uint qt_meta_data_mywireshark[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   10, // methods
+       3,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
  // slots: signature, parameters, type, tag, flags
       13,   12,   12,   12, 0x0a,
+      26,   12,   12,   12, 0x08,
+      44,   12,   12,   12, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_mywireshark[] = {
-    "mywireshark\0\0onTimerOut()\0"
+    "mywireshark\0\0onTimerOut()\0on_stop_clicked()\0"
+    "on_start_clicked()\0"
 };
 
 const QMetaObject mywireshark::staticMetaObject = {
@@ -63,8 +66,10 @@ int mywireshark::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: onTimerOut(); break;
+        case 1: on_stop_clicked(); break;
+        case 2: on_start_clicked(); break;
         }
-        _id -= 1;
+        _id -= 3;
     }
     return _id;
 }

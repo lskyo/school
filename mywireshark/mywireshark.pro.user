@@ -58,6 +58,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <value key="QtVersionId" type="int">0</value>
    <value key="ToolChain" type="int">0</value>
+   <value key="addQDumper" type=""></value>
    <value key="buildConfiguration" type="int">2</value>
   </valuemap>
  </data>
@@ -66,6 +67,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
    <value key="QtVersionId" type="int">0</value>
+   <value key="addQDumper" type=""></value>
    <value key="buildConfiguration" type="int">0</value>
   </valuemap>
  </data>
@@ -74,13 +76,13 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-KNGuddiBd2,guid=4d338b1276341456928cd1005853a984</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-Kiysh6UsjS,guid=f53fc503cd1d266b36cf65005855e81e</value>
     <value type="QString">DESKTOP_SESSION=default</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=default</value>
     <value type="QString">GDM_XSERVER_LOCATION=local</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=Default</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-greLwH/socket</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-cv1RIz/socket</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/test/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/test</value>
     <value type="QString">LANG=en_US.UTF-8</value>
@@ -89,11 +91,11 @@
     <value type="QString">PATH=/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games</value>
     <value type="QString">PWD=/home/test</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/zslinux:/tmp/.ICE-unix/3515</value>
+    <value type="QString">SESSION_MANAGER=local/zslinux:/tmp/.ICE-unix/3508</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=0</value>
-    <value type="QString">SSH_AGENT_PID=3558</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-DdzgaV3515/agent.3515</value>
+    <value type="QString">SSH_AGENT_PID=3551</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-CGJoOx3508/agent.3508</value>
     <value type="QString">USER=test</value>
     <value type="QString">USERNAME=test</value>
     <value type="QString">XAUTHORITY=/home/test/.Xauthority</value>
@@ -115,13 +117,13 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-KNGuddiBd2,guid=4d338b1276341456928cd1005853a984</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-Kiysh6UsjS,guid=f53fc503cd1d266b36cf65005855e81e</value>
     <value type="QString">DESKTOP_SESSION=default</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=default</value>
     <value type="QString">GDM_XSERVER_LOCATION=local</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=Default</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-greLwH/socket</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-cv1RIz/socket</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/test/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/test</value>
     <value type="QString">LANG=en_US.UTF-8</value>
@@ -130,11 +132,11 @@
     <value type="QString">PATH=/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games</value>
     <value type="QString">PWD=/home/test</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/zslinux:/tmp/.ICE-unix/3515</value>
+    <value type="QString">SESSION_MANAGER=local/zslinux:/tmp/.ICE-unix/3508</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=0</value>
-    <value type="QString">SSH_AGENT_PID=3558</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-DdzgaV3515/agent.3515</value>
+    <value type="QString">SSH_AGENT_PID=3551</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-CGJoOx3508/agent.3508</value>
     <value type="QString">USER=test</value>
     <value type="QString">USERNAME=test</value>
     <value type="QString">XAUTHORITY=/home/test/.Xauthority</value>

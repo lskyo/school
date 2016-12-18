@@ -5,8 +5,19 @@
 #include <QTableWidgetItem>
 #include <QTimer>
 #include <QString>
+#include <QDebug>
+#include <Headers/myThread.h>
 
-int rowcount = 0;
+
+myThread *cthread = new myThread();
+int iscatch = 0;
+int rowcount = 1;
+
+
+
+
+
+
 
 mywireshark::mywireshark(QWidget *parent) :
     QMainWindow(parent),
@@ -19,9 +30,11 @@ mywireshark::mywireshark(QWidget *parent) :
     ui->tableWidget->setColumnWidth(2,130);
 
     timer = new QTimer();
-    timer->setInterval(1000);
+    timer->setInterval(1);
     timer->start();
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
+
+    cthread->start();
 }
 
 mywireshark::~mywireshark()
@@ -44,9 +57,19 @@ void mywireshark::changeEvent(QEvent *e)
 
 void mywireshark::onTimerOut()
 {
-    ui->tableWidget->setRowCount(rowcount+1);
+    ui->tableWidget->setRowCount(rowcount);
     rowcount = ui->tableWidget->rowCount();
     ui->tableWidget->setItem(rowcount-1,0,new QTableWidgetItem(QString::number(rowcount)));
 }
 
 
+
+void mywireshark::on_start_clicked()
+{
+    iscatch = 1;
+}
+
+void mywireshark::on_stop_clicked()
+{
+    iscatch = 0;
+}

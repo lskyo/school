@@ -23,6 +23,10 @@ protected:
 private:
     Ui::mywireshark *ui;
     QTimer *timer;
+
+private slots:
+    void on_stop_clicked();
+    void on_start_clicked();
 };
 
 #endif // MYWIRESHARK_H
