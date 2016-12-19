@@ -10,16 +10,15 @@
 
 
 
-extern QVector<QString> ipp;
 extern int iscatch;
 extern int rowcount;
 int sock,n;
-char buffer[1518];
 unsigned char *iphead,*ethhead;
+extern QVector<ROW_DATA> rowdata;
+extern ROW_DATA rowdatabuffer;
 
 myThread::myThread()
 {
-
 }
 
 
@@ -34,24 +33,22 @@ void myThread::run()
     }
     while(1){
 
-        n = recvfrom(sock,buffer,sizeof(buffer),0,NULL,NULL);
-        if(n>0)printf("%d bytes read\n",n);
-
         if(iscatch){
-            IP_HEADER *ipHdr = (IP_HEADER *)(buffer+sizeof(ETH_HEADER));
-            //unsigned char *p = (unsigned char*)&ipHdr->sourceIP;
-            if(0x01==ipHdr->proto){
-                //rowcount++;
-                ipp.append(QString(buffer));
-            }
-                //printf("Source IP\t: %u.%u.%u.%u\n",p[0],p[1],p[2],p[3]);
-                //p = (unsigned char*)&ipHdr->destIP;
-                //printf("Destination IP\t: %u.%u.%u.%u\n",p[0],p[1],p[2],p[3]);
+            n = recvfrom(sock,rowdatabuffer.buffer,sizeof(rowdatabuffer.buffer),0,NULL,NULL);
+            if(n>0)printf("%d bytes read\n",n);
 
-                //qDebug()<<ipp.count();
+            IP_HEADER *ipHdr = (IP_HEADER *)(rowdatabuffer.buffer+sizeof(ETH_HEADER));
+            unsigned char *p = (unsigned char*)&ipHdr->sourceIP;
+
+            //if(0x01==ipHdr->proto){
+                printf("thread Source IP\t: %u.%u.%u.%u\n",p[0],p[1],p[2],p[3]);
+                sprintf(rowdatabuffer.sip,"%u.%u.%u.%u",p[0],p[1],p[2],p[3]);
+                p = (unsigned char*)&ipHdr->destIP;
+                printf("thread Destination IP\t: %u.%u.%u.%u\n",p[0],p[1],p[2],p[3]);
+                sprintf(rowdatabuffer.dip,"%u.%u.%u.%u",p[0],p[1],p[2],p[3]);
+                rowdata.append(rowdatabuffer);
+            //}
         }
-            //rowcount++;
-            //usleep(10);
     }
 }
 

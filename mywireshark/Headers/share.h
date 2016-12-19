@@ -8,6 +8,18 @@ typedef struct _ethdr
         short type;
 }ETH_HEADER;
 
+
+typedef struct _rowdata
+{
+    int num;
+    char buffer[1518];
+    char protocol[20];
+    char sip[100];
+    char dip[100];
+    char info[100];
+} ROW_DATA;
+
+
 typedef struct _iphdr
 {
         unsigned char h_verlen;
