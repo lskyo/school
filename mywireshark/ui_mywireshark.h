@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mywireshark.ui'
 **
-** Created: Fri Dec 16 18:30:43 2016
+** Created: Sun Dec 18 19:24:53 2016
 **      by: Qt User Interface Compiler version 4.4.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -70,20 +70,6 @@ public:
     tableWidget->setHorizontalHeaderItem(3, __colItem3);
     QTableWidgetItem *__colItem4 = new QTableWidgetItem();
     tableWidget->setHorizontalHeaderItem(4, __colItem4);
-    if (tableWidget->rowCount() < 1)
-        tableWidget->setRowCount(1);
-    QTableWidgetItem *__rowItem = new QTableWidgetItem();
-    tableWidget->setVerticalHeaderItem(0, __rowItem);
-    QTableWidgetItem *__tableItem = new QTableWidgetItem();
-    tableWidget->setItem(0, 0, __tableItem);
-    QTableWidgetItem *__tableItem1 = new QTableWidgetItem();
-    tableWidget->setItem(0, 1, __tableItem1);
-    QTableWidgetItem *__tableItem2 = new QTableWidgetItem();
-    tableWidget->setItem(0, 2, __tableItem2);
-    QTableWidgetItem *__tableItem3 = new QTableWidgetItem();
-    tableWidget->setItem(0, 3, __tableItem3);
-    QTableWidgetItem *__tableItem4 = new QTableWidgetItem();
-    tableWidget->setItem(0, 4, __tableItem4);
     tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
     tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -136,17 +122,6 @@ public:
     tableWidget->horizontalHeaderItem(2)->setText(QApplication::translate("mywireshark", "Destination", 0, QApplication::UnicodeUTF8));
     tableWidget->horizontalHeaderItem(3)->setText(QApplication::translate("mywireshark", "Protocol", 0, QApplication::UnicodeUTF8));
     tableWidget->horizontalHeaderItem(4)->setText(QApplication::translate("mywireshark", "Info", 0, QApplication::UnicodeUTF8));
-    tableWidget->verticalHeaderItem(0)->setText(QApplication::translate("mywireshark", "New Row", 0, QApplication::UnicodeUTF8));
-
-    const bool __sortingEnabled = tableWidget->isSortingEnabled();
-    tableWidget->setSortingEnabled(false);
-    tableWidget->item(0, 0)->setText(QApplication::translate("mywireshark", "1", 0, QApplication::UnicodeUTF8));
-    tableWidget->item(0, 1)->setText(QApplication::translate("mywireshark", "123.123.123.123", 0, QApplication::UnicodeUTF8));
-    tableWidget->item(0, 2)->setText(QApplication::translate("mywireshark", "123.123.123.123", 0, QApplication::UnicodeUTF8));
-    tableWidget->item(0, 3)->setText(QApplication::translate("mywireshark", "123.123.123.123", 0, QApplication::UnicodeUTF8));
-    tableWidget->item(0, 4)->setText(QApplication::translate("mywireshark", "123.123.123.123", 0, QApplication::UnicodeUTF8));
-
-    tableWidget->setSortingEnabled(__sortingEnabled);
     apply->setText(QApplication::translate("mywireshark", "Apply", 0, QApplication::UnicodeUTF8));
     clear->setText(QApplication::translate("mywireshark", "Clear", 0, QApplication::UnicodeUTF8));
     start->setText(QApplication::translate("mywireshark", "Start", 0, QApplication::UnicodeUTF8));

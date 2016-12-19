@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'myThread.h'
 **
-** Created: Sat Dec 17 18:03:03 2016
+** Created: Sun Dec 18 18:49:59 2016
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.3)
 **
 ** WARNING! All changes made in this file will be lost!

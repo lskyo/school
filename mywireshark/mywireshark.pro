@@ -9,6 +9,7 @@ SOURCES += main.cpp \
     mywireshark.cpp \
     Sources/myThread.cpp
 HEADERS += mywireshark.h \
-    Headers/myThread.h
+    Headers/myThread.h \
+    Headers/share.h
 FORMS += mywireshark.ui
 OTHER_FILES += 

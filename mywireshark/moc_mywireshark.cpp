@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mywireshark.h'
 **
-** Created: Fri Dec 16 19:07:32 2016
+** Created: Sun Dec 18 18:49:59 2016
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.3)
 **
 ** WARNING! All changes made in this file will be lost!
