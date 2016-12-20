@@ -16,6 +16,9 @@ int sock,n;
 unsigned char *iphead,*ethhead;
 extern QVector<ROW_DATA> rowdata;
 extern ROW_DATA rowdatabuffer;
+extern QVector<ROW_DATA> sel_rowdata;
+extern QString sel;
+
 
 myThread::myThread()
 {
@@ -51,6 +54,9 @@ void myThread::run()
             p = (unsigned char*)&ipHdr->destIP;
             sprintf(rowdatabuffer.dip,"%u.%u.%u.%u",p[0],p[1],p[2],p[3]);
             rowdata.append(rowdatabuffer);
+            if(std::string(rowdatabuffer.proto) == sel.toStdString() && sel != ""){
+                sel_rowdata.append(rowdatabuffer);
+            }
         }
     }
 }

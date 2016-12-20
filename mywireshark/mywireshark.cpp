@@ -18,6 +18,7 @@ long rowcount = 0;
 long old_rowcount = 0;
 unsigned char *p = NULL;
 QVector<ROW_DATA> rowdata;
+QVector<ROW_DATA> sel_rowdata;
 ROW_DATA rowdatabuffer;
 QString sel = "";
 
@@ -64,20 +65,40 @@ void mywireshark::changeEvent(QEvent *e)
 
 void mywireshark::onTimerOut()
 {
-    old_rowcount = ui->tableWidget->rowCount();
-    rowcount = rowdata.count();
+    if(sel == "" && sel_rowdata.empty()){
+        old_rowcount = ui->tableWidget->rowCount();
+        rowcount = rowdata.count();
 
-    if(old_rowcount < rowcount){
-        ui->tableWidget->setRowCount(rowcount);
+        if(old_rowcount < rowcount){
+            ui->tableWidget->setRowCount(rowcount);
 
-        for(long num = old_rowcount; num < rowcount; num++){
-            ui->tableWidget->setItem(num,0,new QTableWidgetItem(QString::number(num)));
-            ui->tableWidget->setItem(num,1,new QTableWidgetItem(rowdata[num].sip));
-            ui->tableWidget->setItem(num,2,new QTableWidgetItem(rowdata[num].dip));
-            ui->tableWidget->setItem(num,3,new QTableWidgetItem(rowdata[num].proto));
-            //ui->tableWidget->setItem(num,4,new QTableWidgetItem(QString::number(old_rowcount)));
+            for(long num = old_rowcount; num < rowcount; num++){
+                ui->tableWidget->setItem(num,0,new QTableWidgetItem(QString::number(num)));
+                ui->tableWidget->setItem(num,1,new QTableWidgetItem(rowdata[num].sip));
+                ui->tableWidget->setItem(num,2,new QTableWidgetItem(rowdata[num].dip));
+                ui->tableWidget->setItem(num,3,new QTableWidgetItem(rowdata[num].proto));
+                //ui->tableWidget->setItem(num,4,new QTableWidgetItem(QString::number(old_rowcount)));
+            }
         }
     }
+    else {
+        old_rowcount = ui->tableWidget->rowCount();
+        rowcount = sel_rowdata.count();
+
+        if(old_rowcount < rowcount){
+            ui->tableWidget->setRowCount(rowcount);
+
+            for(long num = old_rowcount; num < rowcount; num++){
+                //if(std::string(sel_rowdata[num].proto) == sel.toStdString())
+                ui->tableWidget->setItem(num,0,new QTableWidgetItem(QString::number(num)));
+                ui->tableWidget->setItem(num,1,new QTableWidgetItem(sel_rowdata[num].sip));
+                ui->tableWidget->setItem(num,2,new QTableWidgetItem(sel_rowdata[num].dip));
+                ui->tableWidget->setItem(num,3,new QTableWidgetItem(sel_rowdata[num].proto));
+                //ui->tableWidget->setItem(num,4,new QTableWidgetItem(QString::number(old_rowcount)));
+            }
+        }
+    }
+
 }
 
 
@@ -97,17 +118,23 @@ void mywireshark::on_stop_clicked()
 void mywireshark::on_clear_clicked()
 {
     ui->lineEdit->clear();
+    ui->tableWidget->setRowCount(0);
+    sel_rowdata.clear();
     sel="";
 }
 
 void mywireshark::on_apply_clicked()
 {
     sel = ui->lineEdit->text();
-    char mychar[] = "test";
-    if(sel.toStdString() == std::string(mychar)){
-        qDebug("==");
-    }
+    ui->tableWidget->setRowCount(0);
+    sel_rowdata.clear();
+    //char mychar[] = "test";
+    //if(sel.toStdString() == std::string(mychar)){
+    //    qDebug("==");
+    //}
     for(int i = 0; i < rowdata.count(); i++){
-
+        if(std::string(rowdata[i].proto) == sel.toStdString()){
+            sel_rowdata.append(rowdata[i]);
+        }
     }
 }
