@@ -25,6 +25,8 @@ private:
     QTimer *timer;
 
 private slots:
+    void on_apply_clicked();
+    void on_clear_clicked();
     void on_stop_clicked();
     void on_start_clicked();
 };

@@ -14,15 +14,12 @@
 
 myThread *cthread = new myThread();
 int iscatch = 0;
-int rowcount = 0;
-int old_rowcount = 0;
-//char databuffer[1518];
-//char buffer[1518];
-//char rec_flag = 0;
-//char sipbuffer[100],dipbuffer[100];
-unsigned char *p;
+long rowcount = 0;
+long old_rowcount = 0;
+unsigned char *p = NULL;
 QVector<ROW_DATA> rowdata;
 ROW_DATA rowdatabuffer;
+QString sel = "";
 
 
 
@@ -35,11 +32,12 @@ mywireshark::mywireshark(QWidget *parent) :
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->tableWidget->verticalHeader()->setVisible(false);
+
     ui->tableWidget->setColumnWidth(1,130);
     ui->tableWidget->setColumnWidth(2,130);
 
     timer = new QTimer();
-    timer->setInterval(2000);
+    timer->setInterval(20);
     timer->start();
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
 
@@ -68,30 +66,18 @@ void mywireshark::onTimerOut()
 {
     old_rowcount = ui->tableWidget->rowCount();
     rowcount = rowdata.count();
-    printf("old_rowcount = %d\nrowcount = %d\n",old_rowcount,rowcount);
 
     if(old_rowcount < rowcount){
         ui->tableWidget->setRowCount(rowcount);
 
-        for(int num= old_rowcount; num < rowcount; num++){
-            IP_HEADER *ipHdr = (IP_HEADER *)(rowdata[num].buffer+sizeof(ETH_HEADER));
-
-            p = (unsigned char*)&ipHdr->sourceIP;
-            printf("Source IP\t: %u.%u.%u.%u\n",p[0],p[1],p[2],p[3]);
-            p = (unsigned char*)&ipHdr->destIP;
-            printf("Destination IP\t: %u.%u.%u.%u\n",p[0],p[1],p[2],p[3]);
-
+        for(long num = old_rowcount; num < rowcount; num++){
             ui->tableWidget->setItem(num,0,new QTableWidgetItem(QString::number(num)));
             ui->tableWidget->setItem(num,1,new QTableWidgetItem(rowdata[num].sip));
             ui->tableWidget->setItem(num,2,new QTableWidgetItem(rowdata[num].dip));
-            //ui->tableWidget->setItem(old_rowcount-1,3,new QTableWidgetItem(QString::number()));
-            //ui->tableWidget->setItem(old_rowcount-1,4,new QTableWidgetItem(QString::number(old_rowcount)));
-
+            ui->tableWidget->setItem(num,3,new QTableWidgetItem(rowdata[num].proto));
+            //ui->tableWidget->setItem(num,4,new QTableWidgetItem(QString::number(old_rowcount)));
         }
     }
-    //ui->tableWidget->setRowCount(rowcount);
-    //ui->tableWidget->setItem(rowcount-1,0,new QTableWidgetItem(QString::number(rowcount)));
-
 }
 
 
@@ -106,4 +92,22 @@ void mywireshark::on_stop_clicked()
 {
     iscatch = 0;
     printf("iscatch = %d\n",iscatch);
+}
+
+void mywireshark::on_clear_clicked()
+{
+    ui->lineEdit->clear();
+    sel="";
+}
+
+void mywireshark::on_apply_clicked()
+{
+    sel = ui->lineEdit->text();
+    char mychar[] = "test";
+    if(sel.toStdString() == std::string(mychar)){
+        qDebug("==");
+    }
+    for(int i = 0; i < rowdata.count(); i++){
+
+    }
 }

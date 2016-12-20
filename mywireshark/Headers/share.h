@@ -1,6 +1,8 @@
 #ifndef SHARE_H
 #define SHARE_H
 
+#include <string.h>
+
 typedef struct _ethdr
 {
         char src_mac[6];
@@ -13,7 +15,7 @@ typedef struct _rowdata
 {
     int num;
     char buffer[1518];
-    char protocol[20];
+    char proto[20];
     char sip[100];
     char dip[100];
     char info[100];
