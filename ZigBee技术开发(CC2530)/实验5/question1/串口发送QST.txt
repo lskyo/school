@@ -1,0 +1,70 @@
+#include<ioCC2530.h>
+#define uint unsigned int
+#define uchar unsigned char
+#define LED1 P1_0
+#define LED2 P1_1
+
+void Delay(uint);
+void initUART(void);
+void UartTX_Send_String(char *Data,int len);
+
+void initUART(void)
+{
+  
+  CLKCONCMD &= ~0X40;
+  while(!(SLEEPSTA & 0X40));
+  CLKCONCMD &= ~0X47;
+  SLEEPCMD |= 0X04;
+  
+  PERCFG = 0X00;
+  P0SEL = 0X3C;
+  P2DIR &= ~0XC0;
+  //P2SEL &= ~0XC0;
+  U0CSR |= 0X80;
+  U0GCR |= 10;
+  U0BAUD |= 216;
+}
+
+
+void Delay(uint n)
+{
+  uint tt;
+  for(tt=0;tt<n;tt++);
+  for(tt=0;tt<n;tt++);
+  for(tt=0;tt<n;tt++);
+  for(tt=0;tt<n;tt++);
+  for(tt=0;tt<n;tt++);
+}
+
+
+void UartTX_Send_String(char *Data,int len)
+{
+  int j;
+  for (j=0;j<len;j++)
+  {
+    U0DBUF = *Data++;
+    while(UTX0IF == 0);
+    UTX0IF = 0;
+  }
+}
+
+int main(void)
+{
+  char Txdata[6] = "QST";
+  P1DIR = 0x03;
+  LED1=0;
+  LED2=1;
+  initUART();
+  while(1)
+  {
+    UartTX_Send_String(Txdata,3);
+    //U0DBUF = 'q';
+    Delay(50000);
+    Delay(50000);
+    Delay(50000);
+    LED1 = ~LED1;
+    LED2 = ~LED2;
+  }
+  
+  return 0;
+}
