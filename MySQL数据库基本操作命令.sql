@@ -4,6 +4,8 @@ MySQL数据库学习
 ①shell>mysql -uroot -ppassward --prompt 提示符
 ②mysql>prompt 提示符
 【參數】\D 完整的日期；\d 當前數據庫；\h 服務器名稱； \u 當前用戶；
+修改定界符：DELIMITER 定界符;
+修改存储引擎：ALTER TABLE table_name ENGINE [=] engine_name;
 顯示當前服務器版本：SELECT VERSION;
 顯示當前日期：SELECT NOW();
 修改客户端编码方式：SET NAMES gbk;
@@ -58,8 +60,10 @@ MySQL数据库学习
 ③INSERT [INTO] tbl_name [(col_name,...)] SELECT ...
 更新记录：
 ①单表更新：UPDATE [LOW_PRIORITY] [IGNORE] table_reference SET col_name1={expr1 | DEFAULT} [,col_name2={expr2 | DEFAULT}]...[WHERE where_condition];
+②多表更新：UPDATE table_reference SET col_name1 = {expr1 | DEFAULT} [,col_name2 = {expr2 | DEFAULT}]...[WHERE where_condition];
 删除记录：
 ①单表删除：DELETE FROM tbl_name [WHERE where_condition];
+②多表删除：DELETE tbl_name[.*] [,tbl_name[.*]]... FROM table_reference [WHERE where_condition];
 查找记录：
 SELECT select_expr [,select_expr ...]
 [	
@@ -70,7 +74,26 @@ SELECT select_expr [,select_expr ...]
 	[ORDER BY {col_name | expr | position} [ASC|DESC],...]
 	[LIMIT {[offset,] row_count | row_count OFFSET offset}]
 ]
-
+表连接：table_reference {[INNER | CROSS] JOIN | {LEFT | RIGHT} [OUTER] JOIN} table_reference ON join_condition;
+内链接：显示左表及右表符合连接条件的记录；
+左外连接：显示左表的全部记录及右表符合连接条件的记录；
+右外连接：显示右表的全部记录及左表符合连接条件的记录；
+e.g. SELECT col_name... FROM tbl_name1 INNER JOIN tbl_name2 ON condition_expr;
+创建数据表同时将查询结果写入到数据表：CREATE TABLE [IF NOT EXISTS] tbl_name [(create_definition,...)] select_statement;
+创建自定义函数：
+①CREATE FUNCTION function_name(参数1,...) RETURNS {STRING | INTEGER | REAL | DECIMAL} routine_body; 
+②CREATE FUNCTION function_name(参数1,...) RETURNS 返回值 RETURN 函数体; 
+复合结构用BEGIN...END;
+删除自定义函数：DROP FUNCTION function_name;
+创建存储过程：
+CREATE 
+[DEFINER = {user | CURRENT_USER}] 
+PROCEDURE sp_name([proc_parameter[,...]]) 
+[characteristic ...] routine_body
+proc_parameter:
+[IN | OUT | INOUT] param_name type
+调用存储过程：CALL sp_name([parameter[,...]]);
+删除存储过程：DROP PROCEDURE [IF EXISTS] sp_name;
 
 
 
