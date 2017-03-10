@@ -1,5 +1,28 @@
 Jsp page指令：
 <%@ page 属性1="属性值" ... %>
+Jsp include指令：
+<%@ include file="URL" %>
+include动作：
+<jsp:include page="URL" flush="true|false"/>
+include指令与include动作的区别：
+1.语法格式
+include指令：<%@ include file=".." %>     
+include动作：<jsp:include page="..">
+2.发生作用的时间
+include指令：页面转换期间
+include动作：请求期间
+3.包含的内容
+include指令：文件的实际内容
+include动作：页面的输出
+4.转换成的servlet
+include指令：主页面和包含页面转换为一个servlet
+include动作：主页面和包含页面转换为独立的servlet
+5.编译时间
+include指令：较慢-资源必须被解析
+include动作：较快
+6.执行时间
+include指令：稍快
+include动作：较慢-每次资源必须被解析
 Jsp注释：
 ①<!-- HTML注释，客户端可见 -->
 ②<%-- Jsp注释，客户端不可见 --%>
@@ -40,6 +63,7 @@ out对象是JspWriter类的实例，是向客户端输出内容常用的对象�
 12.String getRemoteAddr();返回发送此请求的客户端IP地址
 13.String getRealPath(String path);返回一虚拟路径的真实路径
 14.String request.getContextPath();返回上下文路径
+15.void request.setCharacterEncoding(String name);设置request的字符集编码
 三、response对象
 response对象包含了响应客户端的有关信息，但在Jsp中很少直接用到它。它是HttpServletResponse类的实例。response对象具有页面作用域，即访问一个页面时该页面内的response对象只能对这次访问有效，其他页面的response对象对当前页面无效。
 常用方法：
@@ -124,3 +148,29 @@ Jsp动作元素：
 <jsp:attribute><jsp:body><jsp:element>
 5、Jsp2.0新增的动作元素，主要是用在Tag File中，有两个元素：
 <jsp:invoke><jsp:dobody>
+动作元素详解：
+<jsp:useBean id = "实例名" class = "Java类名" scope = "作用范围" />
+//作用范围：page,仅在当前页面有效; request,可以通过HttpRequest.getAttribute()方法取得JavaBean对象; session,可以通过HttpSession.getAttribute()方法取得JavaBean对象; application,可以通过application.getAttribute()方法取得JavaBean对象；
+<jsp:setProperty name = "JavaBean实例名" property = "*" /> //跟表单关联
+<jsp:setProperty name = "JavaBean实例名" property = "JavaBean属性名" /> //跟表单相关
+<jsp:setProperty name = "JavaBean实例名" property = "JavaBean属性名" value = "BeanValue" /> //手工设置
+<jsp:setProperty name = "JavaBean实例名" property = "propertyName" param = "request对象中的参数名" /> //跟request参数关联
+<jsp:getProperty name = "JavaBean实例名" property = "属性名" />
+<jsp:include page="URL" flush="true|false"/>
+<jsp:forward page="URL" /> //等同于request.getRequestDispatcher("/url").forward(request, response);
+<jsp:param name="参数名" value="参数值"/> //常作为jsp:forward动作的子标签使用
+Cookie对象
+创建Cookie对象：Cookie newCookie = new Cookie(String key, Object value);
+写入Cookie对象：response.addCookie(newCookie);
+读取Cookie对象：Cookie[] cookie = request.getCookie();
+Cookie常用对象：
+1.void setMaxAge(int expiry);设置Cookie的有效期，以秒为单位
+2.void setValue(String value);在Cookie创建后，对Cookie进行赋值
+3.String getName();获取Cookie的名称
+4.String getValue();获取Cookie的值
+5.int getMaxAge();获取Cookie的有效时间，以秒为单位
+Session与Cookie的区别
+1.session在服务器端保存用户信息，而cookie在客户端保存用户信息；
+2.session中保存的是Object类型，而cookie保存的是String类型；
+3.session随会话的结束而将其存储的数据销毁，而cookie可以长期保存在客户端；
+4.session保存重要的信息，而cookie保存不重要的信息；
