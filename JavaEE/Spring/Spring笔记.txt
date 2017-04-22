@@ -1,5 +1,31 @@
-Spring笔记
 IOC：控制反转，控制权的转移，应用程序本身不负责依赖对象的创建和维护，而是由外部容器负责创建和维护。DI(依赖注入)是其一种实现方式。
 Spring注入：是指在启动Spring容器加载Bean配置的时候，完成对变量的赋值行为，常用的有两种注入方法：
 1、设值注入；
 2、构造注入；
+
+Bean配置项
+Id, 唯一标识
+Class, 要实例化的类
+Scope, 作用域
+Constructor arguments, 构造参数
+Properties, 属性
+Autowiring mode, 自动装备的模式
+lazy-initialization mode, 加载模式
+Initialization/destruction method, 加载/销毁的方式
+
+Bean的作用域
+singletion: 单例，指一个Bean容器中只存在一份
+prototype: 每次请求创建新的实例，destroy方式不生效
+request: 每次http请求创建一个实例且仅在当前request内有效
+session: 同上，每次http请求创建，当前session内有效
+global session: 基于protelet的web中有效，如果是在web中，同session
+
+Bean的生命周期
+-定义
+-初始化
+	-法1：实现org.springframework.beans.factory.InitializingBean接口，实现afterPropertiesSet方法
+	-法2：配置init-method属性
+-使用
+-销毁
+	-法1：实现org.springframework.beans.factory.DisposableBean接口，实现destroy方法
+	-法2：配置destroy-method属性
