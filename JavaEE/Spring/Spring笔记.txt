@@ -1,10 +1,24 @@
-IOC：控制反转，控制权的转移，应用程序本身不负责依赖对象的创建和维护，而是由外部容器负责创建和维护。DI(依赖注入)是其一种实现方式。
+Spring 是一个 IOC(DI) 和 AOP 容器框架.
+IOC：控制反转，控制权的转移，应用程序本身不负责依赖对象的创建和维护，而是由外部容器负责创建和维护。
+DI(依赖注入)是其一种实现方式。
 Spring注入：是指在启动Spring容器加载Bean配置的时候，完成对变量的赋值行为，常用的有两种注入方法：
-1、设值注入；
-2、构造注入；
+1、属性注入：
+通过 setter 方法注入Bean 的属性值或依赖的对象
+属性注入使用 <property> 元素, 使用 name 属性指定 Bean 的属性名称，value 属性或 <value> 子节点指定属性值
+<property name="name" value="value"/>
+2、构造注入:
+通过构造方法注入Bean 的属性值或依赖的对象，它保证了 Bean 实例在实例化后就可以使用。
+构造器注入在 <constructor-arg> 元素里声明属性, <constructor-arg> 中没有 name 属性.
+<bean id="car2" class="com.lskyo.spring.beans.Car">
+	<constructor-arg value="Baoma" index="0" type="String"/>
+	<constructor-arg value="Beijing" index="1" type="String"/>
+	<constructor-arg value="240" index="2" type="int"/>
+</bean>
+如果有重载的构造器，可以用index及type属性区分构造器。
+
 
 Bean配置项
-Id, 唯一标识
+Id, 唯一标识,若 id 没有指定，Spring 自动将权限定性类名作为 Bean 的名字
 Class, 要实例化的类
 Scope, 作用域
 Constructor arguments, 构造参数
@@ -13,12 +27,36 @@ Autowiring mode, 自动装备的模式
 lazy-initialization mode, 加载模式
 Initialization/destruction method, 加载/销毁的方式
 
+Spring 容器
+在 Spring IOC 容器读取 Bean 配置创建 Bean 实例之前, 必须对它进行实例化. 
+只有在容器实例化后, 才可以从 IOC 容器里获取 Bean 实例并使用.
+Spring 提供了两种类型的 IOC 容器实现:
+BeanFactory: IOC 容器的基本实现.
+ApplicationContext: 提供了更多的高级特性. 是 BeanFactory 的子接口.
+BeanFactory 是 Spring 框架的基础设施，面向 Spring 本身；
+ApplicationContext 面向使用 Spring 框架的开发者，几乎所有的应用场合都直接使
+用 ApplicationContext 而非底层的 BeanFactory
+
+ApplicationContext的主要实现类：
+ClassPathXmlApplicationContext：从 类路径下加载配置文件
+FileSystemXmlApplicationContext: 从文件系统中加载配置文件
+ApplicationContext 在初始化上下文时就实例化所有单例的 Bean。
+WebApplicationContext 是专门为 WEB 应用而准备的，它允许从相对于 WEB 根目录的路径中完成初始化工作
+
+Bean之间的关系：继承，依赖；
 Bean的作用域
-singletion: 单例，指一个Bean容器中只存在一份
-prototype: 每次请求创建新的实例，destroy方式不生效
-request: 每次http请求创建一个实例且仅在当前request内有效
+singletion: 默认，单例，指一个Bean容器中只存在一份
+prototype: 每次请求(getBean)都会创建新的实例，destroy方式不生效
+request: 每次http请求创建一个实例且仅在当前request内有效，仅适用于WebApplicationContext环境。
 session: 同上，每次http请求创建，当前session内有效
 global session: 基于protelet的web中有效，如果是在web中，同session
+
+使用外部属性文件：
+Spring 提供了一个 PropertyPlaceholderConfigurer 的 BeanFactory 后置处理器, 
+这个处理器允许用户将 Bean 配置的部分内容外移到属性文件中. 可以在 Bean 配置
+文件里使用形式为 ${var} 的变量, PropertyPlaceholderConfigurer 从属性文件里
+加载属性, 并使用这些属性来替换变量.
+
 
 Bean的生命周期
 -定义

@@ -1,0 +1,363 @@
+<!DOCTYPE QtCreatorProject>
+<qtcreator>
+ <data>
+  <variable>RunConfiguration0-CommandLineArguments</variable>
+  <valuelist type="QVariantList" />
+ </data>
+ <data>
+  <variable>RunConfiguration0-ProFile</variable>
+  <value type="QString" >MyCom.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-RunConfiguration.name</variable>
+  <value type="QString" >MyCom</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UseDyldImageSuffix</variable>
+  <value type="bool" >false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UseTerminal</variable>
+  <value type="bool" >false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList" />
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserSetName</variable>
+  <value type="bool" >false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-type</variable>
+  <value type="QString" >Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>activeRunConfiguration</variable>
+  <value type="int" >0</value>
+ </data>
+ <data>
+  <variable>activebuildconfiguration</variable>
+  <value type="QString" >Debug</value>
+ </data>
+ <data>
+  <variable>buildConfiguration-Debug</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
+   <value key="buildDirectory" type="QString" >E:\MyCom</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildConfiguration-Release</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+   <value key="QtVersionId" type="int" >0</value>
+   <value key="addQDumper" type="" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >ALLUSERSPROFILE=C:\ProgramData</value>
+    <value type="QString" >APPDATA=C:\Users\60991\AppData\Roaming</value>
+    <value type="QString" >CATALINA_BASE=D:\Tomcat 8.5</value>
+    <value type="QString" >CATALINA_HOME=D:\Tomcat 8.5</value>
+    <value type="QString" >CLASSPATH=D:\JavaTools\JDK\lib\dt.jar;D:\JavaTools\JDK\lib\tools.jar;</value>
+    <value type="QString" >COMMONPROGRAMFILES=C:\Program Files (x86)\Common Files</value>
+    <value type="QString" >COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files</value>
+    <value type="QString" >COMMONPROGRAMW6432=C:\Program Files\Common Files</value>
+    <value type="QString" >COMPUTERNAME=LSKYO</value>
+    <value type="QString" >COMSPEC=C:\WINDOWS\system32\cmd.exe</value>
+    <value type="QString" >FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer</value>
+    <value type="QString" >FPS_BROWSER_USER_PROFILE_STRING=Default</value>
+    <value type="QString" >HOMEDRIVE=C:</value>
+    <value type="QString" >HOMEPATH=\Users\60991</value>
+    <value type="QString" >JAVA_HOME=D:\JavaTools\JDK</value>
+    <value type="QString" >LOCALAPPDATA=C:\Users\60991\AppData\Local</value>
+    <value type="QString" >LOGONSERVER=\\LSKYO</value>
+    <value type="QString" >M2_HOME=D:\JavaTools\apache-maven-3.5.0</value>
+    <value type="QString" >MYSQL_HOME=C:\Program Files\MySQL\MySQL Server 5.7</value>
+    <value type="QString" >NUMBER_OF_PROCESSORS=4</value>
+    <value type="QString" >ONEDRIVE=C:\Users\60991\OneDrive</value>
+    <value type="QString" >OS=Windows_NT</value>
+    <value type="QString" >PATH=D:\Qt\2009.04\mingw\bin;D:\Qt\2009.04\qt\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Common Files\Thunder Network\KanKan\Codecs;D:\JavaTools\JDK\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MySQL\MySQL Server 5.7\bin;D:\Tomcat 8.5\lib;D:\Tomcat 8.5\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\JavaTools\apache-maven-3.5.0\bin;C:\Users\60991\AppData\Local\Microsoft\WindowsApps;;D:\Microsoft VS Code\bin</value>
+    <value type="QString" >PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC</value>
+    <value type="QString" >PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString" >PROCESSOR_ARCHITEW6432=AMD64</value>
+    <value type="QString" >PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel</value>
+    <value type="QString" >PROCESSOR_LEVEL=6</value>
+    <value type="QString" >PROCESSOR_REVISION=3c03</value>
+    <value type="QString" >PROGRAMDATA=C:\ProgramData</value>
+    <value type="QString" >PROGRAMFILES=C:\Program Files (x86)</value>
+    <value type="QString" >PROGRAMFILES(X86)=C:\Program Files (x86)</value>
+    <value type="QString" >PROGRAMW6432=C:\Program Files</value>
+    <value type="QString" >PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules</value>
+    <value type="QString" >PUBLIC=C:\Users\Public</value>
+    <value type="QString" >QTDIR=D:/Qt/2009.04/qt</value>
+    <value type="QString" >SESSIONNAME=Console</value>
+    <value type="QString" >SYSTEMDRIVE=C:</value>
+    <value type="QString" >SYSTEMROOT=C:\WINDOWS</value>
+    <value type="QString" >TEMP=C:\Users\60991\AppData\Local\Temp</value>
+    <value type="QString" >TMP=C:\Users\60991\AppData\Local\Temp</value>
+    <value type="QString" >USERDOMAIN=LSKYO</value>
+    <value type="QString" >USERDOMAIN_ROAMINGPROFILE=LSKYO</value>
+    <value type="QString" >USERNAME=60991</value>
+    <value type="QString" >USERPROFILE=C:\Users\60991</value>
+    <value type="QString" >VBOX_MSI_INSTALL_PATH=D:\VirtualBox\</value>
+    <value type="QString" >WINDIR=C:\WINDOWS</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >C:/Users/60991/Desktop/MyCom/MyCom.pro</value>
+    <value type="QString" >-spec</value>
+    <value type="QString" >win32-g++</value>
+    <value type="QString" >-r</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >D:/Qt/2009.04/qt/bin/qmake.exe</value>
+   <value key="abstractProcess.enabled" type="bool" >false</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >C:/Users/60991/Desktop/MyCom</value>
+   <value key="buildConfiguration" type="int" >2</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-buildstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >ALLUSERSPROFILE=C:\ProgramData</value>
+    <value type="QString" >APPDATA=C:\Users\60991\AppData\Roaming</value>
+    <value type="QString" >CATALINA_BASE=D:\Tomcat 8.5</value>
+    <value type="QString" >CATALINA_HOME=D:\Tomcat 8.5</value>
+    <value type="QString" >CLASSPATH=D:\JavaTools\JDK\lib\dt.jar;D:\JavaTools\JDK\lib\tools.jar;</value>
+    <value type="QString" >COMMONPROGRAMFILES=C:\Program Files (x86)\Common Files</value>
+    <value type="QString" >COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files</value>
+    <value type="QString" >COMMONPROGRAMW6432=C:\Program Files\Common Files</value>
+    <value type="QString" >COMPUTERNAME=LSKYO</value>
+    <value type="QString" >COMSPEC=C:\WINDOWS\system32\cmd.exe</value>
+    <value type="QString" >FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer</value>
+    <value type="QString" >FPS_BROWSER_USER_PROFILE_STRING=Default</value>
+    <value type="QString" >HOMEDRIVE=C:</value>
+    <value type="QString" >HOMEPATH=\Users\60991</value>
+    <value type="QString" >JAVA_HOME=D:\JavaTools\JDK</value>
+    <value type="QString" >LOCALAPPDATA=C:\Users\60991\AppData\Local</value>
+    <value type="QString" >LOGONSERVER=\\LSKYO</value>
+    <value type="QString" >M2_HOME=D:\JavaTools\apache-maven-3.5.0</value>
+    <value type="QString" >MYSQL_HOME=C:\Program Files\MySQL\MySQL Server 5.7</value>
+    <value type="QString" >NUMBER_OF_PROCESSORS=4</value>
+    <value type="QString" >ONEDRIVE=C:\Users\60991\OneDrive</value>
+    <value type="QString" >OS=Windows_NT</value>
+    <value type="QString" >PATH=D:\Qt\2009.04\mingw\bin;D:\Qt\2009.04\qt\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Common Files\Thunder Network\KanKan\Codecs;D:\JavaTools\JDK\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MySQL\MySQL Server 5.7\bin;D:\Tomcat 8.5\lib;D:\Tomcat 8.5\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\JavaTools\apache-maven-3.5.0\bin;C:\Users\60991\AppData\Local\Microsoft\WindowsApps;;D:\Microsoft VS Code\bin</value>
+    <value type="QString" >PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC</value>
+    <value type="QString" >PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString" >PROCESSOR_ARCHITEW6432=AMD64</value>
+    <value type="QString" >PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel</value>
+    <value type="QString" >PROCESSOR_LEVEL=6</value>
+    <value type="QString" >PROCESSOR_REVISION=3c03</value>
+    <value type="QString" >PROGRAMDATA=C:\ProgramData</value>
+    <value type="QString" >PROGRAMFILES=C:\Program Files (x86)</value>
+    <value type="QString" >PROGRAMFILES(X86)=C:\Program Files (x86)</value>
+    <value type="QString" >PROGRAMW6432=C:\Program Files</value>
+    <value type="QString" >PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules</value>
+    <value type="QString" >PUBLIC=C:\Users\Public</value>
+    <value type="QString" >QTDIR=D:/Qt/2009.04/qt</value>
+    <value type="QString" >SESSIONNAME=Console</value>
+    <value type="QString" >SYSTEMDRIVE=C:</value>
+    <value type="QString" >SYSTEMROOT=C:\WINDOWS</value>
+    <value type="QString" >TEMP=C:\Users\60991\AppData\Local\Temp</value>
+    <value type="QString" >TMP=C:\Users\60991\AppData\Local\Temp</value>
+    <value type="QString" >USERDOMAIN=LSKYO</value>
+    <value type="QString" >USERDOMAIN_ROAMINGPROFILE=LSKYO</value>
+    <value type="QString" >USERNAME=60991</value>
+    <value type="QString" >USERPROFILE=C:\Users\60991</value>
+    <value type="QString" >VBOX_MSI_INSTALL_PATH=D:\VirtualBox\</value>
+    <value type="QString" >WINDIR=C:\WINDOWS</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >D:/Qt/2009.04/mingw/bin/mingw32-make.exe</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >C:/Users/60991/Desktop/MyCom</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-cleanstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >ACTEL_FOR_ALTIUM_OVERRIDE= </value>
+    <value type="QString" >ALLUSERSPROFILE=C:\ProgramData</value>
+    <value type="QString" >ALTERA_FOR_ALTIUM_OVERRIDE= </value>
+    <value type="QString" >APPDATA=C:\Users\Administrator\AppData\Roaming</value>
+    <value type="QString" >ARMCONF=C:\ARM\ADSv1_2\BIN</value>
+    <value type="QString" >ARMDLL=C:\ARM\ADSv1_2\BIN</value>
+    <value type="QString" >ARMHOME=C:\ARM\ADSv1_2</value>
+    <value type="QString" >ARMINC=C:\ARM\ADSv1_2\INCLUDE</value>
+    <value type="QString" >ARMLIB=C:\ARM\ADSv1_2\LIB</value>
+    <value type="QString" >CLASSPATH= .;C:\Program Files\Java\jdk1.8.0_60\lib;C:\Program Files\Java\jdk1.8.0_60\lib\tools.jar</value>
+    <value type="QString" >COMMONPROGRAMFILES=C:\Program Files (x86)\Common Files</value>
+    <value type="QString" >COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files</value>
+    <value type="QString" >COMMONPROGRAMW6432=C:\Program Files\Common Files</value>
+    <value type="QString" >COMPUTERNAME=IOT040</value>
+    <value type="QString" >COMSPEC=C:\Windows\system32\cmd.exe</value>
+    <value type="QString" >DX_ROOT=C:\MentorGraphics\9.5PADS\SDD_HOME\sim\DxSim\</value>
+    <value type="QString" >ELDO_FLOW=sim</value>
+    <value type="QString" >FP_NO_HOST_CHECK=NO</value>
+    <value type="QString" >HOMEDRIVE=C:</value>
+    <value type="QString" >HOMEPATH=\Users\Administrator</value>
+    <value type="QString" >HYP_HOME=C:\MentorGraphics\9.5PADS\SDD_HOME\hyperlynx</value>
+    <value type="QString" >INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\VC98\atl\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\include;C:\Program Files (x86)\Microsoft Visual Studio\VC98\include</value>
+    <value type="QString" >JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60</value>
+    <value type="QString" >KMP_DUPLICATE_LIB_OK=TRUE</value>
+    <value type="QString" >LIB=C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\lib;C:\Program Files (x86)\Microsoft Visual Studio\VC98\lib</value>
+    <value type="QString" >LOCALAPPDATA=C:\Users\Administrator\AppData\Local</value>
+    <value type="QString" >LOGONSERVER=\\IOT040</value>
+    <value type="QString" >MGC_HOME=C:\MentorGraphics\9.5PADS\MGC_HOME.ixn</value>
+    <value type="QString" >MGC_IO_DESIGNER_HOME=C:\MentorGraphics\9.5PADS\SDD_HOME\IODesigner</value>
+    <value type="QString" >MGLS_LICENSE_FILE=E:\license\pads\License.dat</value>
+    <value type="QString" >MKL_SERIAL=YES</value>
+    <value type="QString" >MOZ_PLUGIN_PATH=C:\Program Files (x86)\Foxit Software\Foxit Reader\plugins\</value>
+    <value type="QString" >NUMBER_OF_PROCESSORS=4</value>
+    <value type="QString" >OS=Windows_NT</value>
+    <value type="QString" >PADS_PROGRAMS=Programs</value>
+    <value type="QString" >PADS_ROOT=C:\MentorGraphics\9.5PADS\SDD_HOME</value>
+    <value type="QString" >PATH=C:\Qt\2009.04\mingw\bin;C:\Qt\2009.04\qt\bin;C:\ProgramData\Oracle\Java\javapath;C:\ARM\ADSv1_2\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\Program Files (x86)\ARM\ADSv1_2\bin;C:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\bin;C:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\lib;C:\MentorGraphics\9.5PADS\MGC_HOME.ixn\bin;C:\MentorGraphics\9.5PADS\MGC_HOME.ixn\lib;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;$PATH; C:\Program Files\Java\jdk1.8.0_60\bin;C:\Program Files\Java\jdk1.8.0_60\jre\bin;C:\MentorGraphics\9.5PADS\SDD_HOME\CAMCAD;C:\altera\10.1\quartus\bin;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Rational\common;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin</value>
+    <value type="QString" >PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC</value>
+    <value type="QString" >PERLINTERP=C:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\perl\bin\perl</value>
+    <value type="QString" >PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString" >PROCESSOR_ARCHITEW6432=AMD64</value>
+    <value type="QString" >PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel</value>
+    <value type="QString" >PROCESSOR_LEVEL=6</value>
+    <value type="QString" >PROCESSOR_REVISION=3c03</value>
+    <value type="QString" >PROGRAMDATA=C:\ProgramData</value>
+    <value type="QString" >PROGRAMFILES=C:\Program Files (x86)</value>
+    <value type="QString" >PROGRAMFILES(X86)=C:\Program Files (x86)</value>
+    <value type="QString" >PROGRAMW6432=C:\Program Files</value>
+    <value type="QString" >PSMODULEPATH=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\</value>
+    <value type="QString" >PUBLIC=C:\Users\Public</value>
+    <value type="QString" >QTDIR=C:/Qt/2009.04/qt</value>
+    <value type="QString" >QUARTUS_ROOTDIR=C:\altera\10.1\quartus</value>
+    <value type="QString" >SDD_CES=ces</value>
+    <value type="QString" >SDD_COMMON_BIN=C:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\bin</value>
+    <value type="QString" >SDD_DOC_UTILS=doc_utils</value>
+    <value type="QString" >SDD_DX=dx</value>
+    <value type="QString" >SDD_DXSIM=dxsim</value>
+    <value type="QString" >SDD_HLT=hlt</value>
+    <value type="QString" >SDD_HLX=hlx</value>
+    <value type="QString" >SDD_HOME=C:\MentorGraphics\9.5PADS\SDD_HOME</value>
+    <value type="QString" >SDD_HSSD=hssd</value>
+    <value type="QString" >SDD_ICDB=iCDB</value>
+    <value type="QString" >SDD_IOD=IODesigner</value>
+    <value type="QString" >SDD_JAVA_HOME=C:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\jre\default\bin\javaw.exe</value>
+    <value type="QString" >SDD_LM=lm</value>
+    <value type="QString" >SDD_LM_BIN=C:\MentorGraphics\9.5PADS\SDD_HOME\lm\win32\bin</value>
+    <value type="QString" >SDD_LOCAL=C:\ProgramData\mgc\win32\9.5PADS</value>
+    <value type="QString" >SDD_MGC_HOME=..\MGC_HOME.ixn</value>
+    <value type="QString" >SDD_PADS=pads</value>
+    <value type="QString" >SDD_PLATFORM=win32</value>
+    <value type="QString" >SDD_SIM=sim</value>
+    <value type="QString" >SDD_START=start</value>
+    <value type="QString" >SDD_STARTBAT=start /b /wait</value>
+    <value type="QString" >SDD_TRN=translators</value>
+    <value type="QString" >SDD_VCD=camcad</value>
+    <value type="QString" >SDD_VERSION=9.5PADS</value>
+    <value type="QString" >SDD_VIEWER_HOME=C:\MentorGraphics\9.5PADS\MGC_HOME.ixn\lib</value>
+    <value type="QString" >SDD_VLPERL_BIN=C:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\perl\bin</value>
+    <value type="QString" >SDD_WDBSERVER_HOME=C:\MentorGraphics\9.5PADS\MGC_HOME.ixn\lib</value>
+    <value type="QString" >SDD_WG=wg</value>
+    <value type="QString" >SDD_WV=wv</value>
+    <value type="QString" >SESSIONNAME=Console</value>
+    <value type="QString" >SYSTEMDRIVE=C:</value>
+    <value type="QString" >SYSTEMROOT=C:\Windows</value>
+    <value type="QString" >TEMP=C:\Users\ADMINI~1\AppData\Local\Temp</value>
+    <value type="QString" >TMP=C:\Users\ADMINI~1\AppData\Local\Temp</value>
+    <value type="QString" >USERDOMAIN=IOT040</value>
+    <value type="QString" >USERNAME=Administrator</value>
+    <value type="QString" >USERPROFILE=C:\Users\Administrator</value>
+    <value type="QString" >VS110COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\</value>
+    <value type="QString" >WDIR=C:\PADS Projects;C:\MentorGraphics\9.5PADS\SDD_HOME\standard</value>
+    <value type="QString" >WF_CLASSPATH=C:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\lib</value>
+    <value type="QString" >WINDIR=C:\Windows</value>
+    <value type="QString" >WINDOWS_TRACING_FLAGS=3</value>
+    <value type="QString" >WINDOWS_TRACING_LOGFILE=C:\BVTBin\Tests\installpackage\csilogfile.log</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >clean</value>
+    <value type="QString" >-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >C:/Qt/2009.04/mingw/bin/mingw32-make.exe</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >E:/MyCom</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+   <value key="buildConfiguration" type="int" >0</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-cleanstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfigurations</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >Debug</value>
+   <value type="QString" >Release</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+   <value key="mkspec" type="QString" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildsteps</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >trolltech.qt4projectmanager.qmake</value>
+   <value type="QString" >trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>cleanstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+   <value key="clean" type="bool" >true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>cleansteps</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>defaultFileEncoding</variable>
+  <value type="QByteArray" >System</value>
+ </data>
+ <data>
+  <variable>project</variable>
+  <valuemap type="QVariantMap" />
+ </data>
+</qtcreator>
