@@ -1,11 +1,40 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
+QHostAddress address;
+quint16 port;
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->widget_3->hide();
+    QDesktopWidget* desktop = QApplication::desktop();
+    move((desktop->width() - this->width())/2, (desktop->height() - this->height())/2);
 
+
+    lf = new ListenForm();
+    cf = new ConnectForm();
+
+    connect(cf, SIGNAL(sendConnectReady(int)),
+            this, SLOT(readPendingDatagrams(int)));
+    connect(lf, SIGNAL(sendListenReady(int)),
+            this, SLOT(readPendingDatagrams(int)));
+
+    tcpSocket = new QTcpSocket(this);
+    connect(tcpSocket,SIGNAL(readyRead()),
+                this,SLOT(readMessage()));
+    connect(tcpSocket,SIGNAL(error(QAbstractSocket::SocketError)),
+                this,SLOT(displayError(QAbstractSocket::SocketError)));
+
+    tcpServer = new QTcpServer(this);
+    connect(tcpServer, SIGNAL(newConnection()),
+                this, SLOT(getConnection()));
+
+    role = 0;
+    isConnectioning = false;
     com = "COM1";
     isOpen = false;
     isShow = true;
@@ -72,16 +101,19 @@ void MainWindow::on_pushButton_5_clicked()
 void MainWindow::readMyCom()
 {
     qDebug()<<"This is readMyCom()!";
-    //QByteArray temp = pMycom->readAll();
-    //readBuf = pMycom->read(8);
     readBuf = pMycom->readAll();
-    //int i = readBuf.indexOf('\n');
     qDebug() << "readBuf:" << readBuf;
-    qDebug() << "readBuf length:" << readBuf.length();
     rxn+=readBuf.length();
     rxnl->setText(QString::number(rxn));
+    qDebug()<<"isShow:" << isShow;
+
     if(isShow){
         ui->textEdit->insertPlainText(readBuf);
+    }
+
+    qDebug()<<"isConnectioning:" << isConnectioning;
+    if(isConnectioning){
+        sendRecvMessage();
     }
 }
 
@@ -187,6 +219,7 @@ void MainWindow::on_pushButton_4_clicked()
     pMycom->write(byte);
     txn+=str.length();
     txnl->setText(QString::number(txn));
+    if(role==1)sendMessage();
 }
 
 void MainWindow::on_pushButton_6_clicked()
@@ -210,7 +243,13 @@ void MainWindow::on_pushButton_7_clicked()
     {
         lineStr = txtInput.readLine();
         QByteArray byte = lineStr.toLatin1().data();
-        pMycom->write(byte);
+        if(role==1){
+
+            tcpSocket->write(QByteArray(lineStr.toLocal8Bit()));
+            qDebug() << "send message successful!";
+        }else{
+            pMycom->write(byte);
+        }
         txn+=lineStr.length();
         txnl->setText(QString::number(txn));
     }
@@ -232,3 +271,122 @@ void MainWindow::on_pushButton_8_clicked()
         }
     }
 }
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    cf->show();
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    lf->show();
+}
+
+void MainWindow::readPendingDatagrams(int value)
+{
+    qDebug() << "This is readPendingDatagrams...";
+    qDebug() << "value:" << value ;
+    qDebug() << "address:" << address.toString() ;
+    qDebug() << "port:" << port ;
+
+    if(value == 1){
+        qDebug() << "connecting...";
+        if(isOpen)role = 0;
+        else role = 1;
+        isConnectioning = true;
+        tcpSocket->abort();
+        blockSize = 0;
+        tcpSocket->connectToHost(address, port);
+        qDebug() << "tcpSocket->localAddress().toIPv4Address():" << tcpSocket->localAddress().toIPv4Address();
+        qDebug() << "tcpSocket->localPort():" << tcpSocket->localPort();
+        qDebug()<<"tcpSocket->peerAddress():"<<tcpSocket->peerAddress();
+        qDebug()<<"tcpSocket->peerPort():"<<tcpSocket->peerPort();
+
+        ui->widget_3->show();
+        ui->label_8->setText("connecting...");
+
+    }else if(value ==2){
+        qDebug() << "listening...";
+        ui->label_8->setText("listening...");
+        ui->widget_3->show();
+        if(isOpen)role = 0;
+        else role = 1;
+        if(!tcpServer->listen(QHostAddress::LocalHost,port)){
+            qDebug() << tcpServer->errorString();
+        }
+        qDebug() << "tcpServer->serverAddress().toString()" << tcpServer->serverAddress().toString();
+        qDebug() << "tcpServer->serverPort():" << tcpServer->serverPort();
+    }
+}
+
+void MainWindow::sendMessage()
+{
+    qDebug() << "This is sendMessage...";
+    QString str;
+    ui->textEdit_2->selectAll();
+    str = ui->textEdit_2->toPlainText();
+    qDebug() << "str:" << str;
+    tcpSocket->write(QByteArray(str.toLocal8Bit()));
+    qDebug() << "send message successful!";
+}
+
+
+void MainWindow::sendRecvMessage()
+{
+    qDebug() << "This is sendRecvMessage...";
+    qDebug() << "readBuf:" << QString::fromLocal8Bit(readBuf);
+    clientSocket->write(readBuf);
+    qDebug() << "send message successful!";
+}
+
+void MainWindow::getConnection()
+{
+    qDebug() << "This is getConnection...";
+    clientSocket = tcpServer->nextPendingConnection();
+    connect(clientSocket,SIGNAL(readyRead()),
+                this,SLOT(readClientMessage()));
+    connect(clientSocket,SIGNAL(error(QAbstractSocket::SocketError)),
+                this,SLOT(displayError2(QAbstractSocket::SocketError)));
+    qDebug() << "clientSocket->peerAddress():" << clientSocket->peerAddress();
+    qDebug() << "clientSocket->peerPort():" << clientSocket->peerPort();
+    qDebug() << "clientSocket->localAddress().toIPv4Address():" << clientSocket->localAddress().toIPv4Address();
+    qDebug() << "clientSocket->localPort()" << clientSocket->localPort();
+    isConnectioning = true;
+    ui->label_8->setText("connecting...");
+    ui->widget_3->show();
+}
+
+void MainWindow::readMessage()
+{
+    qDebug() << "This is readMessage...";
+    message = QString::fromLocal8Bit(tcpSocket->readAll());
+    if(role == 1){
+        ui->textEdit->insertPlainText(message);
+    }else{
+        pMycom->write(message.toLatin1().data());
+    }
+    qDebug() << message;
+}
+void MainWindow::readClientMessage()
+{
+    qDebug() << "This is readClientMessage...";
+    message = QString::fromLocal8Bit(clientSocket->readAll());
+    if(role == 1){
+        ui->textEdit->insertPlainText(message);
+    }else{
+        pMycom->write(message.toLatin1().data());
+    }
+    qDebug() << message;
+}
+
+void MainWindow::displayError(QAbstractSocket::SocketError)
+{
+    qDebug() << tcpSocket->errorString();
+    ui->widget_3->hide();
+}
+void MainWindow::displayError2(QAbstractSocket::SocketError)
+{
+    qDebug() << clientSocket->errorString();
+    ui->widget_3->hide();
+}
+

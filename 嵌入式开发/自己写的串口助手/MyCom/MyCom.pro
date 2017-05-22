@@ -9,11 +9,17 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     win_qextserialport.cpp \
     qextserialport.cpp \
-    qextserialbase.cpp
+    qextserialbase.cpp \
+    connectform.cpp \
+    listenform.cpp
 HEADERS += mainwindow.h \
     win_qextserialport.h \
     qextserialport.h \
-    qextserialbase.h
-FORMS += mainwindow.ui
+    qextserialbase.h \
+    connectform.h \
+    listenform.h
+FORMS += mainwindow.ui \
+    connectform.ui \
+    listenform.ui
 OTHER_FILES += 
 RESOURCES += 

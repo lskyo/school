@@ -6,6 +6,14 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QFileDialog>
+#include "listenform.h"
+#include "connectform.h"
+#include <QDesktopWidget>
+#include <QHostAddress>
+#include <QtNetWork>
+#include <QAbstractSocket>
+
+
 
 namespace Ui
 {
@@ -19,6 +27,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+private:
+    Ui::MainWindow *ui;
     QextSerialPort *pMycom;
     int baud;
     int dataNum;
@@ -34,12 +45,22 @@ public:
     long rxn,txn;
     QLabel *rx,*rxnl;
     QLabel *tx,*txnl;
+    ConnectForm *cf;
+    ListenForm *lf;
+    QTcpServer *tcpServer;
+    QTcpSocket *tcpSocket;
+    QTcpSocket *clientSocket;
+    QString message;
+    int role;
+    quint16 blockSize;
+    bool isConnectioning;
+    void sendMessage();
+    void sendRecvMessage();
 
-
-private:
-    Ui::MainWindow *ui;
 
 private slots:
+    void on_pushButton_10_clicked();
+    void on_pushButton_9_clicked();
     void on_pushButton_8_clicked();
     void on_pushButton_7_clicked();
     void on_pushButton_6_clicked();
@@ -54,6 +75,14 @@ private slots:
     void on_pushButton_5_clicked();
     void on_pushButton_2_clicked();
     void readMyCom();
+    void readPendingDatagrams(int);
+    void readMessage();
+    void readClientMessage();
+    void getConnection();
+    void displayError(QAbstractSocket::SocketError);
+    void displayError2(QAbstractSocket::SocketError);
+
+
 };
 
 #endif // MAINWINDOW_H

@@ -4,9 +4,12 @@ INPUT(
 ./debug\win_qextserialport.o
 ./debug\qextserialport.o
 ./debug\qextserialbase.o
+./debug\connectform.o
+./debug\listenform.o
 ./debug\moc_mainwindow.o
 ./debug\moc_win_qextserialport.o
 ./debug\moc_qextserialport.o
 ./debug\moc_qextserialbase.o
-./debug\qrc_resources.o
+./debug\moc_connectform.o
+./debug\moc_listenform.o
 );
